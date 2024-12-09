@@ -25,5 +25,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &__vector {
+      width: 50%;
+      aspect-ratio: 1;
+    }
   }
 }

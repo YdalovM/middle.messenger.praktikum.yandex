@@ -3,6 +3,7 @@ import { VERIFICATION_CONTENT } from "./const";
 import styles from "./styles.module.scss";
 import { BlueButton } from "../../components/button/BlueButton";
 import { CustomLink } from "../../components/customLink/CustomLik";
+import { NavigatePanel } from "../../components/navigatePanel/NavigatePanel";
 
 export const Verification = () => {
   const pathname = window.location.pathname;
@@ -22,7 +23,9 @@ export const Verification = () => {
   };
 
   return `
-    <div class="${styles.verification}">
+    <!-- TODO: удалить после написания роутинга -->    
+    ${NavigatePanel()}
+    <main class="${styles.verification}">
       <div class="${styles.verification__card}">
         <h1 class="${styles.verification__card_title}">${title}</h1>
         <form class="${styles.verification__card__form}">
@@ -35,6 +38,6 @@ export const Verification = () => {
         </form>
         ${CustomLink(link_path, link_text)}
       </div>
-    </div>
+    </main>
   `;
 };

@@ -6,7 +6,7 @@ export const CorrespondenceHeader = (avatar: string, name: string) => {
             <div class="${styles.correspondence_header__opponent}">
                 <div 
                     class="${styles.correspondence_header__opponent_avatar}">
-                    ${avatar ? `<img src="${avatar}" />` : ""}
+                    ${avatar ? `<img src="${avatar}" alt="аватар"/>` : ""}
                 </div>
                 <span>${name}</span>
             </div>
