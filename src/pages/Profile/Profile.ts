@@ -12,11 +12,12 @@ export const Profile = () => {
     <main class="${styles.profile}">
         ${ProfileSidebar()}
         <div class="${styles.profile__container}">
-            <img 
-                alt="аватар"
-                src="${emptyAvatar}"
+            <input 
+                type="file"
+                name="avatar"
                 class="${styles.profile__container_avatar}"
             />
+ 
             ${ProfileInputsList(PROFILE_INPUTS)}
             ${ProfileInputsList(PROFILE_PASSWORDS_INPUTS)}
         </div>
