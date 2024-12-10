@@ -18,7 +18,7 @@ export const VERIFICATION_INPUTS_REGISTER = [
   {
     type: "text",
     placeholder: "Почта",
-    name: "mail",
+    name: "email",
   },
   {
     type: "text",

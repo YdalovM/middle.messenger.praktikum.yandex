@@ -13,7 +13,7 @@ export const Error = () => {
   handleClickBySelector(styles.error_link, () => navigate(EPATHS.LOGIN));
 
   return `
-      <!-- TODO: удалить после написания роутинга -->    
+    <!-- TODO: удалить после написания роутинга -->    
     ${NavigatePanel()}
     <main class="${styles.error} ${styles[error_code]}">
       <h1 class="${styles.error_title}">${TEXT_ERROR?.title}</h1>

@@ -1,6 +1,7 @@
 import { render } from "./main";
 import { Chat } from "./pages/Chat/Chat";
 import { Error } from "./pages/Errors/Errors";
+import { Profile } from "./pages/Profile/Profile";
 import { Verification } from "./pages/Verefication/Verification";
 
 import { EERRORS, EPATHS } from "./types/general";
@@ -11,6 +12,7 @@ const ROUTERS: Record<string, () => string> = {
   "/register": () => Verification(),
   "/server_error": Error,
   "/not_found": Error,
+  "/profile": () => Profile(),
 };
 
 export const routers = async () => {
