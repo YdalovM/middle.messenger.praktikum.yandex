@@ -1,0 +1,26 @@
+.sidebar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fbfbfb;
+  border-right: 1px solid #e3e3e3;
+
+  &__button {
+    background-color: #3369f3;
+    width: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+
+    &_img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      aspect-ratio: 1px;
+      transform: rotate(180deg);
+    }
+  }
+}

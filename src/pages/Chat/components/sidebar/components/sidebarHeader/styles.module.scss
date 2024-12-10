@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+
+  &_navigate {
+    text-align: end;
+    font-size: 12px;
+    color: #999999;
+    cursor: pointer;
+  }
+}
