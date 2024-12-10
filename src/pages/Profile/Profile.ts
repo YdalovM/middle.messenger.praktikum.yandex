@@ -1,6 +1,5 @@
 import styles from "./styles.module.scss";
 import { NavigatePanel } from "../../components/navigatePanel/NavigatePanel";
-import emptyAvatar from "../../../public/Profile/empty_avatar.png";
 import { ProfileSidebar } from "./components/profileSidebar/ProfileSidebar";
 import { ProfileInputsList } from "./components/profileInputsList/ProfileInputsList";
 import { PROFILE_INPUTS, PROFILE_PASSWORDS_INPUTS } from "./const";
