@@ -10,7 +10,7 @@ export interface IVerificationContent {
   button_text: string;
   link_text: string;
   link_path: EPATHS;
-  inputs: Array<IVerificationInput>;
+  inputs: IVerificationInput[];
 }
 
 export interface IVerificationInput {

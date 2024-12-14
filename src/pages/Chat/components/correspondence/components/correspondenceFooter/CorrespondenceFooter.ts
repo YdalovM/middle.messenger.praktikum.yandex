@@ -8,7 +8,7 @@ export const CorrespondenceFooter = () => {
             <img src="${clip}" class="${styles.footer__clip}" alt="отправить файл"/>
             <input type="text" class="${styles.footer__input}" placeholder="Сообщение" name="message"/>
             <button class="${styles.footer__send_message}" >
-                <img 
+                <img
                     src="${vector}"
                     alt="стрелочка отправить"
                     class="${styles.footer__send_message__vector}"

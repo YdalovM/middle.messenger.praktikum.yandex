@@ -7,10 +7,10 @@ export const VerificationInput = ({
   name,
 }: IVerificationInput) => {
   return `
-    <input 
-        class="${styles.input}" 
-        type="${type}" 
-        placeholder="${placeholder}" 
+    <input
+        class="${styles.input}"
+        type="${type}"
+        placeholder="${placeholder}"
         name="${name}"
     />
     `;

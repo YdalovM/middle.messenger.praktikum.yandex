@@ -6,17 +6,17 @@ import { PROFILE_INPUTS, PROFILE_PASSWORDS_INPUTS } from "./const";
 
 export const Profile = () => {
   return `
-    <!-- TODO: удалить после написания роутинга -->   
+    <!-- TODO: удалить после написания роутинга -->
     ${NavigatePanel()}
     <main class="${styles.profile}">
         ${ProfileSidebar()}
         <div class="${styles.profile__container}">
-            <input 
+            <input
                 type="file"
                 name="avatar"
                 class="${styles.profile__container_avatar}"
             />
- 
+
             ${ProfileInputsList(PROFILE_INPUTS)}
             ${ProfileInputsList(PROFILE_PASSWORDS_INPUTS)}
         </div>

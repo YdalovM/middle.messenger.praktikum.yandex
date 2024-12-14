@@ -4,7 +4,7 @@ export const CorrespondenceHeader = (avatar: string, name: string) => {
   return `
         <header class="${styles.correspondence_header}">
             <div class="${styles.correspondence_header__opponent}">
-                <div 
+                <div
                     class="${styles.correspondence_header__opponent_avatar}">
                     ${avatar ? `<img src="${avatar}" alt="аватар"/>` : ""}
                 </div>

@@ -16,14 +16,14 @@ export const Verification = () => {
   const handelClickVerefication = (isLogin: boolean, e?: Event) => {
     e?.preventDefault();
     if (isLogin) {
-      return console.log("Вошел");
+      return;
     }
 
-    return console.log("Зарегался");
+    return;
   };
 
   return `
-    <!-- TODO: удалить после написания роутинга -->    
+    <!-- TODO: удалить после написания роутинга -->
     ${NavigatePanel()}
     <main class="${styles.verification}">
       <div class="${styles.verification__card}">

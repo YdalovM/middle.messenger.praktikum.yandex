@@ -1,3 +1,3 @@
-export const templator = (content: (value?: any) => void) => {
+export const templator = (content: () => void) => {
   return `${content()}`;
 };

@@ -5,7 +5,7 @@ export interface IProfileInputsList {
   label: string;
   name: string;
 }
-export const ProfileInputsList = (inputs: Array<IProfileInputsList>) => {
+export const ProfileInputsList = (inputs: IProfileInputsList[]) => {
   return `
     <div>
      ${inputs.map((input) => ProfileInput(input)).join("")}
