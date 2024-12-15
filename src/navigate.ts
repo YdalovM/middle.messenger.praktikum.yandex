@@ -1,17 +1,17 @@
+import { ChatView } from "./application/pages/Chat/ChatView";
+import { ErrorsView } from "./application/pages/Errors/ErrorsView";
 import { render } from "./main";
-import { Chat } from "./pages/Chat/Chat";
-import { Error } from "./pages/Errors/Errors";
 import { Profile } from "./pages/Profile/Profile";
 import { Verification } from "./pages/Verefication/Verification";
 
 import { EERRORS, EPATHS } from "./types/general";
 
 const ROUTERS: Record<string, () => string> = {
-  "/": Chat,
+  "/": () => new ChatView().render(),
   "/login": () => Verification(),
   "/register": () => Verification(),
-  "/server_error": Error,
-  "/not_found": Error,
+  "/server_error": () => new ErrorsView().render(),
+  "/not_found": () => new ErrorsView().render(),
   "/profile": () => Profile(),
 };
 

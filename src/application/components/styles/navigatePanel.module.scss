@@ -1,0 +1,12 @@
+.panel {
+  &__links_list {
+    display: flex;
+    gap: 12px;
+    padding: 5px 20px;
+
+    .link {
+      text-decoration: none;
+      list-style-type: none;
+    }
+  }
+}
