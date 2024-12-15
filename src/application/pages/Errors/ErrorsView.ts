@@ -2,18 +2,18 @@ import { NavigatePanelView } from "../../components/componentsViews/NavigatePane
 import { TEXT_ERRORS_LIST } from "../../const";
 import { View } from "../../MVCTypes/view";
 import { IErrors } from "../../types";
-import { ErrorsControler } from "./ErrorsControler";
+import { ErrorsController } from "./ErrorsController";
 import styles from "./styles/errors.module.scss";
 
 export class ErrorsView implements View {
-  controller: ErrorsControler;
+  controller: ErrorsController;
   navigatePanel: NavigatePanelView;
   error: string;
   errorCode: string;
   TEXT_ERROR?: IErrors;
 
   constructor() {
-    this.controller = new ErrorsControler();
+    this.controller = new ErrorsController();
     this.navigatePanel = new NavigatePanelView();
     this.error = window.location.pathname;
     this.errorCode = this.error.slice(1);

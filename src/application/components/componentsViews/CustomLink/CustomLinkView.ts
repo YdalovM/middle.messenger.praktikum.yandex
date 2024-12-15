@@ -1,7 +1,7 @@
 import { ComponentsView } from "../../componentsMVCTypes/componentsView";
 import styles from "../../styles/customLink.module.scss";
 
-export class CustomLink implements ComponentsView {
+export class CustomLinkView implements ComponentsView {
   text: string;
   className?: string;
 
