@@ -7,4 +7,11 @@ export class VerificationController implements Controller {
   constructor() {
     this.model = new VerificationModel();
   }
+
+  sendForm(formSelector: string): void {
+    const form = document.querySelector(`.${formSelector}`) as HTMLFormElement;
+
+    if (!form) return;
+    console.log(new FormData(form));
+  }
 }

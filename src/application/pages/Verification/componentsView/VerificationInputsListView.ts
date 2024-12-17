@@ -11,9 +11,9 @@ export class VerificationInputsListView implements ComponentsView {
 
   render(): string {
     return `
-            ${this.inputs
-              .map((input) => new VerificationInputView(input).render())
-              .join("")}
-        `;
+        ${this.inputs
+          .map((input) => new VerificationInputView(input).render())
+          .join("")}
+    `;
   }
 }

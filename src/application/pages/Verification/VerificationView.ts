@@ -7,6 +7,7 @@ import styles from "./styles/verification.module.scss";
 import { CustomLinkView } from "../../components/componentsViews/CustomLink/CustomLinkView";
 import { IVerificationContent } from "../../types";
 import { VerificationController } from "./VerificationController";
+import { addEventBySelector } from "../../../hooks/addEventBySelector";
 
 export class VerificationView implements View {
   controller: VerificationController;
@@ -36,21 +37,26 @@ export class VerificationView implements View {
   }
 
   render(): string {
+    addEventBySelector(styles.verification__card__form_button, () =>
+      this.controller.sendForm(styles.verification__card__form)
+    );
+
     return `
-        <!-- TODO: удалить после написания роутинга -->
-    ${this.navigatePanel.render()}
-    <main class="${styles.verification}">
-      <div class="${styles.verification__card}">
-        <h1 class="${styles.verification__card_title}">${
-      this.content.title
-    }</h1>
-        <form class="${styles.verification__card__form}">
-            ${this.vereficationInputsList.render()}
-            ${this.blueButton.render()}
-        </form>
-        ${this.customLink.render()}
-      </div>
-    </main>
-        `;
+      <!-- TODO: удалить после написания роутинга -->
+      ${this.navigatePanel.render()}
+      <main class="${styles.verification}">
+        <div class="${styles.verification__card}">
+          <h1 
+            class="${styles.verification__card_title}">
+            ${this.content.title}
+          </h1>
+          <form class="${styles.verification__card__form}">
+              ${this.vereficationInputsList.render()}
+              ${this.blueButton.render()}
+          </form>
+          ${this.customLink.render()}
+        </div>
+      </main>
+    `;
   }
 }
