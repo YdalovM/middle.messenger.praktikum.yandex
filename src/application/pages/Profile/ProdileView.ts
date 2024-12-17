@@ -1,6 +1,6 @@
 import { NavigatePanelView } from "../../components/componentsViews/NavigatePanel/NavigatePanelView";
+import { PROFILE_INPUTS, PROFILE_PASSWORDS_INPUTS } from "../../const";
 import { View } from "../../MVCTypes/view";
-import { PROFILE_INPUTS, PROFILE_PASSWORDS_INPUTS } from "../../types";
 import { ProfileInputsListView } from "./componentsView/ProfileInputsListView";
 import { ProfileSidebarView } from "./componentsView/ProfileSidebarView";
 import { ProfileController } from "./ProfileController";
