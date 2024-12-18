@@ -1,4 +1,5 @@
-export type ICallbackEventBus = (...args: unknown[]) => unknown;
+export type ICallbackEventBusArgs = Array<string>;
+export type ICallbackEventBus = (...args: ICallbackEventBusArgs) => unknown;
 
 export class EventBus {
   listeners: Record<string, Array<ICallbackEventBus>>;
@@ -8,6 +9,9 @@ export class EventBus {
   }
 
   on(event: string, callback: ICallbackEventBus) {
+    if (!this.listeners[event]) {
+      this.listeners[event] = [];
+    }
     this.listeners[event].push(callback);
   }
 
@@ -21,13 +25,13 @@ export class EventBus {
     listeners.splice(listeners.indexOf(callback), 1);
   }
 
-  emit(event: string, ...args: unknown[]) {
+  emit(event: string, args?: ICallbackEventBusArgs) {
     const listeners = this.listeners[event];
     if (!listeners) {
       throw new Error("No listeners");
     }
     listeners.forEach((listener) => {
-      listener(...args);
+      listener(...(args || ""));
     });
   }
 }

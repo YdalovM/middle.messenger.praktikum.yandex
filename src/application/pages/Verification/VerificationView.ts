@@ -7,9 +7,10 @@ import styles from "./styles/verification.module.scss";
 import { CustomLinkView } from "../../components/componentsViews/CustomLink/CustomLinkView";
 import { IVerificationContent } from "../../types";
 import { VerificationController } from "./VerificationController";
-import { addEventBySelector } from "../../../hooks/addEventBySelector";
+import { Block } from "../../../core/Block";
+import { EventBus } from "../../../core/EventBus";
 
-export class VerificationView implements View {
+export class VerificationView extends Block implements View {
   controller: VerificationController;
   navigatePanel: NavigatePanelView;
   vereficationInputsList: VerificationInputsListView;
@@ -17,9 +18,12 @@ export class VerificationView implements View {
   content: IVerificationContent;
   customLink: CustomLinkView;
   pathname: string;
+  eventBus: EventBus;
 
   constructor() {
-    this.controller = new VerificationController();
+    super();
+    this.eventBus = new EventBus();
+    this.controller = new VerificationController(this.eventBus);
     this.navigatePanel = new NavigatePanelView();
     this.pathname = window.location.pathname;
     this.content = VERIFICATION_CONTENT[this.pathname];
@@ -36,10 +40,13 @@ export class VerificationView implements View {
     );
   }
 
+  initialize() {
+    this.init();
+  }
+
   render(): string {
-    addEventBySelector(styles.verification__card__form_button, () =>
-      this.controller.sendForm(styles.verification__card__form)
-    );
+    debugger;
+    console.log(this.navigatePanel);
 
     return `
       <!-- TODO: удалить после написания роутинга -->

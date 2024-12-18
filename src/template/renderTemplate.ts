@@ -5,5 +5,6 @@ export const renderTemplate = (content: () => void) => {
   if (!app) throw new Error("App не проинициализирован");
 
   const template = templator(content);
+
   app.innerHTML = template;
 };
