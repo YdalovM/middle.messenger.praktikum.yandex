@@ -24,18 +24,16 @@ npm run start
 
 npm run dev
 
-# 2. Проект собран при помощи сборщика vite содержит в себе следующие дополнительные технологии:
+# 2. Проект собран при помощи сборщика vite содержит в себе следующие дополнительные;1.gitclonehttps технологии:
 
 # scss
 
 # typeScript
 
-# 3. Ссылка на дизайн
-
+# 3. Ссылка на дизайн;
 https://www.figma.com/design/eiNWtdE6txZMHtJy2ndQz0/Untitled?node-id=1-958&node-type=frame&t=WTaZVL3k53Qd5uix-0
 
-# 4. Настроено развертывание на сервере netlify с ветки main
-
+# 4. Настроено развертывание на сервере netlify с ветки main;
 https://subtle-speculoos-834a86.netlify.app/
 
 # 5. Пристусвуют следующие страницы и роуты
