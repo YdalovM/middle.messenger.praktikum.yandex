@@ -11,56 +11,62 @@ import { Block } from "../../../core/Block";
 import { EventBus } from "../../../core/EventBus";
 
 export class VerificationView extends Block implements View {
-  controller: VerificationController;
-  navigatePanel: NavigatePanelView;
-  vereficationInputsList: VerificationInputsListView;
-  blueButton: BlueButtonView;
-  content: IVerificationContent;
+  // !!избаваиться от статики потому что это не правильный подход!!
+
+  static navigatePanel: NavigatePanelView = new NavigatePanelView();
+
+  static content: IVerificationContent =
+    VERIFICATION_CONTENT[window.location.pathname];
+
+  static vereficationInputsList: VerificationInputsListView =
+    new VerificationInputsListView(VerificationView.content.inputs);
+
+  static blueButton: BlueButtonView = new BlueButtonView(
+    VerificationView.content.button_text,
+    styles.verification__card__form_button
+  );
+
+  // нужно поченить что бы я мог обращаться к этой переменной в функции render через this
   customLink: CustomLinkView;
-  pathname: string;
+
+  controller: VerificationController;
   eventBus: EventBus;
 
   constructor() {
     super();
     this.eventBus = new EventBus();
     this.controller = new VerificationController(this.eventBus);
-    this.navigatePanel = new NavigatePanelView();
-    this.pathname = window.location.pathname;
-    this.content = VERIFICATION_CONTENT[this.pathname];
     this.customLink = new CustomLinkView(
-      this.content.link_path,
-      this.content.link_text
+      VerificationView.content.link_path,
+      VerificationView.content.link_text
     );
-    this.vereficationInputsList = new VerificationInputsListView(
-      this.content.inputs
-    );
-    this.blueButton = new BlueButtonView(
-      this.content.button_text,
-      styles.verification__card__form_button
-    );
-  }
 
-  initialize() {
+    // функция инициализации в которой происходит рендер
     this.init();
   }
 
+  // невидимая переменная
+  abc = 1;
+
   render(): string {
-    debugger;
-    console.log(this.navigatePanel);
+    // в рендере к слову он не просто не видит значение переменных, он прото не видит атрибуты класса
+
+    console.log(this.abc); // abc не существует
 
     return `
       <!-- TODO: удалить после написания роутинга -->
-      ${this.navigatePanel.render()}
+      ${VerificationView.navigatePanel.render()}
       <main class="${styles.verification}">
         <div class="${styles.verification__card}">
           <h1 
             class="${styles.verification__card_title}">
-            ${this.content.title}
+            ${VerificationView.content.title}
           </h1>
           <form class="${styles.verification__card__form}">
-              ${this.vereficationInputsList.render()}
-              ${this.blueButton.render()}
+              ${VerificationView.vereficationInputsList.render()}
+              ${VerificationView.blueButton.render()}
           </form>
+          <!-- показывает что она undefine хотя в теории если эта функция вызывается и она не статичиская я предпологая что класс создан, а значит конструктор должен отработать  -->
           ${this.customLink.render()}
         </div>
       </main>

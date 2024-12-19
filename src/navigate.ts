@@ -4,11 +4,12 @@ import { ProfileView } from "./application/pages/Profile/ProdileView";
 import { VerificationView } from "./application/pages/Verification/VerificationView";
 import { render } from "./main";
 import { EERRORS, EPATHS } from "./types/general";
-const verificationView = new VerificationView();
-verificationView.initialize();
+
+// возвращает функцию которая создает класс, сейчас работает только VerificationView
+
 const ROUTERS: Record<string, () => string | VerificationView> = {
   "/": () => new ChatView().render(),
-  "/login": () => verificationView.render(),
+  "/login": () => new VerificationView(),
   "/register": () => new VerificationView(),
   "/server_error": () => new ErrorsView().render(),
   "/not_found": () => new ErrorsView().render(),

@@ -23,15 +23,20 @@ export class Block {
   }
 
   _render() {
+    // засовывается функция render, которая должна вернуть html в виде строки и подставиться в app
     renderTemplate(this.render);
   }
 
+  // функция которая переопределяется в дочернем классе
   render() {}
 
   init() {
+    // задаются события
     this.registerEvents(this.eventBus);
+    // в контролере мы подписываемся на все возможные события на странице и подвязываем логику, это корретно
     this.controller?.init();
 
+    // тут вызывается _render
     this.eventBus?.emit(Block.EVENTS.FLOW_RENDER);
   }
 }
